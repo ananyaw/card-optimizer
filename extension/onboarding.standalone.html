@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Card Optimizer - Set up</title>
+  <style>
+:root {
+  --bg: #f6f7f9; --card: #fff; --text: #1a1f2b; --muted: #5d6677;
+  --line: #dfe3ea; --accent: #0b5fff; --accent-soft: #e8f0ff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.shell { max-width: 520px; margin: 0 auto; padding: 32px 20px 96px; }
+.screen[hidden], [hidden] { display: none !important; }
+.logo { font-size: 40px; margin-bottom: 8px; }
+h1 { font-size: 24px; line-height: 1.25; margin: 0 0 8px; }
+.lead { color: var(--muted); margin: 0 0 20px; }
+.privacy {
+  background: var(--accent-soft); border-radius: 10px; padding: 14px 16px;
+  margin-bottom: 24px; font-size: 14px;
+}
+.btn {
+  font: inherit; font-weight: 600; padding: 10px 18px; border-radius: 8px;
+  border: 1px solid var(--line); background: var(--card); color: var(--text); cursor: pointer;
+}
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:disabled { opacity: .45; cursor: not-allowed; }
+.btn.link { border: 0; background: none; color: var(--accent); padding: 4px 0; }
+.search {
+  width: 100%; font: inherit; padding: 12px 14px; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--card); margin-bottom: 12px;
+}
+.search:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; min-height: 0; }
+.chip {
+  display: inline-flex; align-items: center; gap: 6px; background: var(--accent-soft);
+  color: var(--accent); border-radius: 999px; padding: 4px 6px 4px 12px; font-size: 13px; font-weight: 600;
+}
+.chip button {
+  border: 0; background: none; color: inherit; cursor: pointer; font-size: 16px; line-height: 1; padding: 0 4px;
+}
+.list { list-style: none; margin: 0; padding: 0; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.list li + li { border-top: 1px solid var(--line); }
+.row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; cursor: pointer; }
+.row:hover { background: #fafbfc; }
+.row input { width: 18px; height: 18px; accent-color: var(--accent); flex: none; }
+.row .name { font-weight: 600; display: block; }
+.row .issuer { color: var(--muted); font-size: 13px; }
+.empty { margin-top: 16px; text-align: center; color: var(--muted); }
+.thanks { color: #0a7a3d; }
+.footer {
+  position: fixed; left: 0; right: 0; bottom: 0; background: var(--card);
+  border-top: 1px solid var(--line); display: flex; justify-content: space-between;
+  align-items: center; padding: 12px max(20px, calc((100vw - 520px) / 2 + 20px));
+}
+.count { color: var(--muted); font-weight: 600; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+</style>
+</head>
+<body>
+  <main class="shell">
+
+    <!-- Step 1: welcome + privacy promise -->
+    <section id="welcome" class="screen">
+      <div class="logo" aria-hidden="true">&#128179;</div>
+      <h1>Use the right card, every checkout</h1>
+      <p class="lead">Tells you which of your cards earns the most for what you're buying, and shows the math.</p>
+      <div class="privacy">
+        <strong>Private by design.</strong>
+        We only store the <em>names</em> of the cards you carry, on this device.
+        Never card numbers, never your accounts.
+      </div>
+      <button id="start" class="btn primary">Pick your cards</button>
+    </section>
+
+    <!-- Step 2: pick cards (searchable static list) -->
+    <section id="picker" class="screen" hidden>
+      <h1>Which cards do you carry?</h1>
+      <p class="lead">Search and tick all that apply. You can change this any time.</p>
+
+      <label class="sr-only" for="search">Search cards</label>
+      <input id="search" class="search" type="search" placeholder="Search by card or issuer (e.g. &quot;sapphire&quot;, &quot;amex&quot;)"
+             autocomplete="off" spellcheck="false">
+
+      <div id="chips" class="chips" aria-live="polite"></div>
+
+      <ul id="list" class="list" role="list"></ul>
+
+      <div id="empty" class="empty" hidden>
+        <p>No match for <strong id="empty-query"></strong>.</p>
+        <button id="request" class="btn link">Request this card</button>
+        <p id="request-thanks" class="thanks" hidden>Noted - thanks! It helps us decide which cards to add next.</p>
+      </div>
+
+      <footer class="footer">
+        <span id="count" class="count">0 selected</span>
+        <button id="continue" class="btn primary" disabled>Continue</button>
+      </footer>
+    </section>
+
+    <!-- Saved confirmation (step 3 onwards not built yet) -->
+    <section id="done" class="screen" hidden>
+      <h1>You're set</h1>
+      <p class="lead" id="done-summary"></p>
+      <button id="edit" class="btn">Edit cards</button>
+    </section>
+
+  </main>
+
+<!--CARD_DATA_START--><script id="card-data" type="application/json">[
+  {
+    "id": "amex_gold",
+    "name": "American Express Gold Card",
+    "issuer": "American Express",
+    "aliases": [
+      "amex gold",
+      "gold card",
+      "amex gold card"
+    ]
+  },
+  {
+    "id": "amex_platinum",
+    "name": "American Express Platinum Card",
+    "issuer": "American Express",
+    "aliases": [
+      "amex platinum",
+      "platinum card",
+      "amex plat",
+      "plat"
+    ]
+  },
+  {
+    "id": "amex_blue_cash_preferred",
+    "name": "Blue Cash Preferred Card from American Express",
+    "issuer": "American Express",
+    "aliases": [
+      "blue cash preferred",
+      "bcp",
+      "amex bcp",
+      "amex blue cash"
+    ]
+  },
+  {
+    "id": "bank_of_america_customized_cash",
+    "name": "Bank of America Customized Cash Rewards",
+    "issuer": "Bank of America",
+    "aliases": [
+      "bofa customized cash",
+      "customized cash rewards",
+      "bofa cash rewards",
+      "boa customized cash"
+    ]
+  },
+  {
+    "id": "capital_one_quicksilver",
+    "name": "Capital One Quicksilver Cash Rewards",
+    "issuer": "Capital One",
+    "aliases": [
+      "quicksilver",
+      "quicksilver cash",
+      "cap one quicksilver"
+    ]
+  },
+  {
+    "id": "capital_one_savor",
+    "name": "Capital One Savor Cash Rewards",
+    "issuer": "Capital One",
+    "aliases": [
+      "savor",
+      "savor cash",
+      "cap one savor"
+    ]
+  },
+  {
+    "id": "capital_one_venture",
+    "name": "Capital One Venture Rewards",
+    "issuer": "Capital One",
+    "aliases": [
+      "venture",
+      "venture rewards",
+      "cap one venture"
+    ]
+  },
+  {
+    "id": "capital_one_venture_x",
+    "name": "Capital One Venture X",
+    "issuer": "Capital One",
+    "aliases": [
+      "venture x",
+      "vx",
+      "capital one venture x",
+      "capital one"
+    ]
+  },
+  {
+    "id": "chase_freedom_flex",
+    "name": "Chase Freedom Flex",
+    "issuer": "Chase",
+    "aliases": [
+      "freedom flex",
+      "cff",
+      "chase freedom flex"
+    ]
+  },
+  {
+    "id": "chase_freedom_unlimited",
+    "name": "Chase Freedom Unlimited",
+    "issuer": "Chase",
+    "aliases": [
+      "freedom unlimited",
+      "cfu",
+      "chase fu"
+    ]
+  },
+  {
+    "id": "chase_sapphire_preferred",
+    "name": "Chase Sapphire Preferred",
+    "issuer": "Chase",
+    "aliases": [
+      "sapphire preferred",
+      "csp",
+      "chase sapphire"
+    ]
+  },
+  {
+    "id": "chase_sapphire_reserve",
+    "name": "Chase Sapphire Reserve",
+    "issuer": "Chase",
+    "aliases": [
+      "csr",
+      "sapphire reserve",
+      "chase reserve"
+    ]
+  },
+  {
+    "id": "citi_double_cash",
+    "name": "Citi Double Cash",
+    "issuer": "Citi",
+    "aliases": [
+      "double cash",
+      "citi double cash",
+      "citi"
+    ]
+  },
+  {
+    "id": "citi_strata_premier",
+    "name": "Citi Strata Premier",
+    "issuer": "Citi",
+    "aliases": [
+      "strata premier",
+      "citi premier",
+      "strata prem"
+    ]
+  },
+  {
+    "id": "discover_it_cash_back",
+    "name": "Discover it Cash Back",
+    "issuer": "Discover (Capital One)",
+    "aliases": [
+      "discover it",
+      "discover it cash back",
+      "discover"
+    ]
+  },
+  {
+    "id": "apple_card",
+    "name": "Apple Card",
+    "issuer": "Goldman Sachs Bank USA",
+    "aliases": [
+      "apple card",
+      "apple",
+      "apple pay card"
+    ]
+  },
+  {
+    "id": "wells_fargo_active_cash",
+    "name": "Wells Fargo Active Cash Card",
+    "issuer": "Wells Fargo",
+    "aliases": [
+      "active cash",
+      "wells fargo active cash",
+      "wf active cash"
+    ]
+  }
+]</script><!--CARD_DATA_END-->
+  <script>
+// Onboarding steps 1-2: welcome, then pick cards from a static searchable list.
+// Stores card IDs only (never card numbers). Uses chrome.storage.local inside the
+// extension; falls back to localStorage when the page is opened as a plain file.
+(function () {
+  "use strict";
+
+  var CARDS = JSON.parse(document.getElementById("card-data").textContent);
+  var KEY_SELECTED = "selectedCardIds";
+  var KEY_REQUESTS = "requestedCards";
+
+  var el = function (id) { return document.getElementById(id); };
+  var screens = { welcome: el("welcome"), picker: el("picker"), done: el("done") };
+
+  // ---- storage -------------------------------------------------------------
+  var hasChrome = typeof chrome !== "undefined" && chrome.storage && chrome.storage.local;
+
+  function storeGet(key, fallback) {
+    if (hasChrome) {
+      return chrome.storage.local.get(key).then(function (r) {
+        return r[key] === undefined ? fallback : r[key];
+      }).catch(function () { return fallback; });
+    }
+    try {
+      var v = localStorage.getItem(key);
+      return Promise.resolve(v ? JSON.parse(v) : fallback);
+    } catch (e) { return Promise.resolve(fallback); }
+  }
+
+  function storeSet(key, value) {
+    if (hasChrome) {
+      var o = {}; o[key] = value;
+      return chrome.storage.local.set(o).catch(function () {});
+    }
+    try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) {}
+    return Promise.resolve();
+  }
+
+  // ---- search --------------------------------------------------------------
+  function norm(s) { return String(s).toLowerCase().replace(/[^a-z0-9]/g, ""); }
+
+  CARDS.forEach(function (c) {
+    c._hay = norm([c.name, c.issuer].concat(c.aliases || []).join(" "));
+  });
+
+  // Every typed word must appear somewhere in the card's name, issuer or aliases.
+  function matches(card, query) {
+    var tokens = query.toLowerCase().split(/\s+/).map(norm).filter(Boolean);
+    return tokens.every(function (t) { return card._hay.indexOf(t) !== -1; });
+  }
+
+  // ---- state & rendering ---------------------------------------------------
+  var selected = new Set();
+  var query = "";
+
+  function show(name) {
+    Object.keys(screens).forEach(function (k) { screens[k].hidden = k !== name; });
+    window.scrollTo(0, 0);
+  }
+
+  function renderChips() {
+    var box = el("chips");
+    box.textContent = "";
+    CARDS.filter(function (c) { return selected.has(c.id); }).forEach(function (c) {
+      var chip = document.createElement("span");
+      chip.className = "chip";
+      chip.appendChild(document.createTextNode(c.name));
+      var x = document.createElement("button");
+      x.type = "button";
+      x.setAttribute("aria-label", "Remove " + c.name);
+      x.dataset.remove = c.id;
+      x.textContent = "×";
+      chip.appendChild(x);
+      box.appendChild(chip);
+    });
+  }
+
+  function renderList() {
+    var list = el("list");
+    list.textContent = "";
+    var shown = CARDS.filter(function (c) { return matches(c, query); });
+
+    shown.forEach(function (c) {
+      var li = document.createElement("li");
+      var label = document.createElement("label");
+      label.className = "row";
+      var cb = document.createElement("input");
+      cb.type = "checkbox";
+      cb.value = c.id;
+      cb.checked = selected.has(c.id);
+      var text = document.createElement("span");
+      var name = document.createElement("span");
+      name.className = "name"; name.textContent = c.name;
+      var issuer = document.createElement("span");
+      issuer.className = "issuer"; issuer.textContent = c.issuer;
+      text.appendChild(name); text.appendChild(issuer);
+      label.appendChild(cb); label.appendChild(text);
+      li.appendChild(label);
+      list.appendChild(li);
+    });
+
+    var none = shown.length === 0;
+    el("empty").hidden = !none;
+    list.hidden = none;
+    if (none) {
+      el("empty-query").textContent = "“" + query.trim() + "”";
+      el("request-thanks").hidden = true;
+      el("request").hidden = false;
+    }
+  }
+
+  function renderFooter() {
+    var n = selected.size;
+    el("count").textContent = n + " selected";
+    el("continue").disabled = n === 0;
+  }
+
+  function renderAll() { renderChips(); renderList(); renderFooter(); }
+
+  function persist() { return storeSet(KEY_SELECTED, Array.from(selected)); }
+
+  // ---- events --------------------------------------------------------------
+  el("start").addEventListener("click", function () { show("picker"); el("search").focus(); });
+
+  el("search").addEventListener("input", function (e) {
+    query = e.target.value;
+    renderList();
+  });
+
+  el("list").addEventListener("change", function (e) {
+    var id = e.target.value;
+    if (e.target.checked) selected.add(id); else selected.delete(id);
+    persist(); renderChips(); renderFooter();
+  });
+
+  el("chips").addEventListener("click", function (e) {
+    var id = e.target.dataset && e.target.dataset.remove;
+    if (!id) return;
+    selected.delete(id);
+    persist(); renderAll();
+  });
+
+  el("request").addEventListener("click", function () {
+    var text = query.trim();
+    if (!text) return;
+    storeGet(KEY_REQUESTS, []).then(function (arr) {
+      if (arr.indexOf(text) === -1) arr.push(text);
+      return storeSet(KEY_REQUESTS, arr);
+    }).then(function () {
+      el("request").hidden = true;
+      el("request-thanks").hidden = false;
+    });
+  });
+
+  el("continue").addEventListener("click", function () {
+    persist().then(function () {
+      var names = CARDS.filter(function (c) { return selected.has(c.id); })
+                       .map(function (c) { return c.name; });
+      el("done-summary").textContent = "Saved " + names.length + " card" +
+        (names.length === 1 ? "" : "s") + ": " + names.join(", ") + ".";
+      show("done");
+    });
+  });
+
+  el("edit").addEventListener("click", function () { show("picker"); });
+
+  // ---- init: returning users go straight to their saved selection ----------
+  storeGet(KEY_SELECTED, []).then(function (ids) {
+    var valid = new Set(CARDS.map(function (c) { return c.id; }));
+    selected = new Set(ids.filter(function (id) { return valid.has(id); }));
+    renderAll();
+    if (selected.size > 0) {
+      var names = CARDS.filter(function (c) { return selected.has(c.id); })
+                       .map(function (c) { return c.name; });
+      el("done-summary").textContent = "Saved " + names.length + " card" +
+        (names.length === 1 ? "" : "s") + ": " + names.join(", ") + ".";
+      show("done");
+    }
+  });
+})();
+
+</script>
+</body>
+</html>

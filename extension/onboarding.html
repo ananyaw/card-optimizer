@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Card Optimizer - Set up</title>
+  <link rel="stylesheet" href="onboarding.css">
+</head>
+<body>
+  <main class="shell">
+
+    <!-- Step 1: welcome + privacy promise -->
+    <section id="welcome" class="screen">
+      <div class="logo" aria-hidden="true">&#128179;</div>
+      <h1>Use the right card, every checkout</h1>
+      <p class="lead">Tells you which of your cards earns the most for what you're buying, and shows the math.</p>
+      <div class="privacy">
+        <strong>Private by design.</strong>
+        We only store the <em>names</em> of the cards you carry, on this device.
+        Never card numbers, never your accounts.
+      </div>
+      <button id="start" class="btn primary">Pick your cards</button>
+    </section>
+
+    <!-- Step 2: pick cards (searchable static list) -->
+    <section id="picker" class="screen" hidden>
+      <h1>Which cards do you carry?</h1>
+      <p class="lead">Search and tick all that apply. You can change this any time.</p>
+
+      <label class="sr-only" for="search">Search cards</label>
+      <input id="search" class="search" type="search" placeholder="Search by card or issuer (e.g. &quot;sapphire&quot;, &quot;amex&quot;)"
+             autocomplete="off" spellcheck="false">
+
+      <div id="chips" class="chips" aria-live="polite"></div>
+
+      <ul id="list" class="list" role="list"></ul>
+
+      <div id="empty" class="empty" hidden>
+        <p>No match for <strong id="empty-query"></strong>.</p>
+        <button id="request" class="btn link">Request this card</button>
+        <p id="request-thanks" class="thanks" hidden>Noted - thanks! It helps us decide which cards to add next.</p>
+      </div>
+
+      <footer class="footer">
+        <span id="count" class="count">0 selected</span>
+        <button id="continue" class="btn primary" disabled>Continue</button>
+      </footer>
+    </section>
+
+    <!-- Saved confirmation (step 3 onwards not built yet) -->
+    <section id="done" class="screen" hidden>
+      <h1>You're set</h1>
+      <p class="lead" id="done-summary"></p>
+      <button id="edit" class="btn">Edit cards</button>
+    </section>
+
+  </main>
+
+<!--CARD_DATA_START--><script id="card-data" type="application/json">[
+  {
+    "id": "amex_gold",
+    "name": "American Express Gold Card",
+    "issuer": "American Express",
+    "aliases": [
+      "amex gold",
+      "gold card",
+      "amex gold card"
+    ]
+  },
+  {
+    "id": "amex_platinum",
+    "name": "American Express Platinum Card",
+    "issuer": "American Express",
+    "aliases": [
+      "amex platinum",
+      "platinum card",
+      "amex plat",
+      "plat"
+    ]
+  },
+  {
+    "id": "amex_blue_cash_preferred",
+    "name": "Blue Cash Preferred Card from American Express",
+    "issuer": "American Express",
+    "aliases": [
+      "blue cash preferred",
+      "bcp",
+      "amex bcp",
+      "amex blue cash"
+    ]
+  },
+  {
+    "id": "bank_of_america_customized_cash",
+    "name": "Bank of America Customized Cash Rewards",
+    "issuer": "Bank of America",
+    "aliases": [
+      "bofa customized cash",
+      "customized cash rewards",
+      "bofa cash rewards",
+      "boa customized cash"
+    ]
+  },
+  {
+    "id": "capital_one_quicksilver",
+    "name": "Capital One Quicksilver Cash Rewards",
+    "issuer": "Capital One",
+    "aliases": [
+      "quicksilver",
+      "quicksilver cash",
+      "cap one quicksilver"
+    ]
+  },
+  {
+    "id": "capital_one_savor",
+    "name": "Capital One Savor Cash Rewards",
+    "issuer": "Capital One",
+    "aliases": [
+      "savor",
+      "savor cash",
+      "cap one savor"
+    ]
+  },
+  {
+    "id": "capital_one_venture",
+    "name": "Capital One Venture Rewards",
+    "issuer": "Capital One",
+    "aliases": [
+      "venture",
+      "venture rewards",
+      "cap one venture"
+    ]
+  },
+  {
+    "id": "capital_one_venture_x",
+    "name": "Capital One Venture X",
+    "issuer": "Capital One",
+    "aliases": [
+      "venture x",
+      "vx",
+      "capital one venture x",
+      "capital one"
+    ]
+  },
+  {
+    "id": "chase_freedom_flex",
+    "name": "Chase Freedom Flex",
+    "issuer": "Chase",
+    "aliases": [
+      "freedom flex",
+      "cff",
+      "chase freedom flex"
+    ]
+  },
+  {
+    "id": "chase_freedom_unlimited",
+    "name": "Chase Freedom Unlimited",
+    "issuer": "Chase",
+    "aliases": [
+      "freedom unlimited",
+      "cfu",
+      "chase fu"
+    ]
+  },
+  {
+    "id": "chase_sapphire_preferred",
+    "name": "Chase Sapphire Preferred",
+    "issuer": "Chase",
+    "aliases": [
+      "sapphire preferred",
+      "csp",
+      "chase sapphire"
+    ]
+  },
+  {
+    "id": "chase_sapphire_reserve",
+    "name": "Chase Sapphire Reserve",
+    "issuer": "Chase",
+    "aliases": [
+      "csr",
+      "sapphire reserve",
+      "chase reserve"
+    ]
+  },
+  {
+    "id": "citi_double_cash",
+    "name": "Citi Double Cash",
+    "issuer": "Citi",
+    "aliases": [
+      "double cash",
+      "citi double cash",
+      "citi"
+    ]
+  },
+  {
+    "id": "citi_strata_premier",
+    "name": "Citi Strata Premier",
+    "issuer": "Citi",
+    "aliases": [
+      "strata premier",
+      "citi premier",
+      "strata prem"
+    ]
+  },
+  {
+    "id": "discover_it_cash_back",
+    "name": "Discover it Cash Back",
+    "issuer": "Discover (Capital One)",
+    "aliases": [
+      "discover it",
+      "discover it cash back",
+      "discover"
+    ]
+  },
+  {
+    "id": "apple_card",
+    "name": "Apple Card",
+    "issuer": "Goldman Sachs Bank USA",
+    "aliases": [
+      "apple card",
+      "apple",
+      "apple pay card"
+    ]
+  },
+  {
+    "id": "wells_fargo_active_cash",
+    "name": "Wells Fargo Active Cash Card",
+    "issuer": "Wells Fargo",
+    "aliases": [
+      "active cash",
+      "wells fargo active cash",
+      "wf active cash"
+    ]
+  }
+]</script><!--CARD_DATA_END-->
+  <script src="onboarding.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+[project]
+name = "cardopt"
+version = "0.1.0"
+description = "Card optimizer: which card from your wallet should you use for this purchase?"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
