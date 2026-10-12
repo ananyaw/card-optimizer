@@ -1,0 +1,80 @@
+{
+  "id": "citi_strata_premier",
+  "name": "Citi Strata Premier",
+  "issuer": "Citi",
+  "aliases": [
+    "strata premier",
+    "citi premier",
+    "strata prem"
+  ],
+  "annual_fee": 95,
+  "currency": "citi_typ",
+  "base_rate": 1,
+  "terms_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+  "rules": [
+    {
+      "category": "hotels",
+      "channel": "portal",
+      "rate": 10,
+      "note": "Booked on cititravel.com",
+      "source_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "source_quote": "10 points per dollar spent on Hotels, Car Rentals and Attractions booked on cititravel.com"
+    },
+    {
+      "category": "car_rental",
+      "channel": "portal",
+      "rate": 10,
+      "note": "Booked on cititravel.com",
+      "source_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "source_quote": "10 points per dollar spent on Hotels, Car Rentals and Attractions booked on cititravel.com"
+    },
+    {
+      "category": "flights",
+      "channel": "any",
+      "rate": 3,
+      "note": "Air travel",
+      "source_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "source_quote": "3 points per dollar spent on Air Travel and Other Hotel Purchases"
+    },
+    {
+      "category": "hotels",
+      "channel": "direct",
+      "rate": 3,
+      "note": "'Other hotel purchases' (not booked on cititravel.com)",
+      "source_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "source_quote": "3 points per dollar spent on Air Travel and Other Hotel Purchases"
+    },
+    {
+      "category": "dining",
+      "channel": "any",
+      "rate": 3,
+      "source_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "source_quote": "3 points per dollar spent at Restaurants"
+    },
+    {
+      "category": "groceries",
+      "channel": "any",
+      "rate": 3,
+      "note": "Supermarkets",
+      "source_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "source_quote": "3 points per dollar spent at Supermarkets"
+    },
+    {
+      "category": "gas",
+      "channel": "any",
+      "rate": 3,
+      "note": "Gas and EV charging stations",
+      "source_url": "https://www.citi.com/credit-cards/citi-strata-premier-credit-card",
+      "source_quote": "3 points per dollar spent on Gas & EV Charging Stations"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Annual hotel benefit",
+      "amount_usd": 100,
+      "note": "Once per calendar year, $100 off a single hotel stay of $500 or more (excl. taxes and fees) booked through cititravel.com"
+    }
+  ],
+  "last_verified": null,
+  "notes": "DRAFT 2026-10-12 from https://www.citi.com/credit-cards/citi-strata-premier-credit-card (issuer page). Needs human review. Annual fee $95 and $0 foreign fee read from the page pricing section. Page fetch dropped some dynamic values (bonus amounts). Car rental booked direct is not stated as a bonus, so only the portal 10x is modeled (direct earns base per 'All Other Purchases', not explicitly tied to car rental). Supermarket exclusions (e.g. warehouse clubs, Target/Walmart) not seen on the fetched page; check Additional Information footnote. Not modeled: attractions via cititravel.com (10x), welcome bonus."
+}

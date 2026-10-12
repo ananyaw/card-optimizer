@@ -1,0 +1,31 @@
+{
+  "id": "amex_platinum",
+  "name": "American Express Platinum Card",
+  "issuer": "American Express",
+  "aliases": ["amex platinum", "platinum card", "amex plat", "plat"],
+  "annual_fee": 895,
+  "currency": "amex_mr",
+  "base_rate": 1,
+  "terms_url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+  "rules": [
+    {"category": "flights", "channel": "any", "rate": 5, "cap_usd": 500000,
+     "note": "Booked directly with airlines or through Amex Travel; cap is per calendar year",
+     "source_url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+     "source_quote": "5X Points on Flights Booked directly with airlines or through American Express Travel®, on up to $500,000 on these purchases per calendar year."},
+    {"category": "hotels", "channel": "portal", "rate": 5,
+     "note": "Prepaid hotels booked on Amex Travel",
+     "source_url": "https://www.americanexpress.com/us/credit-cards/card/platinum/",
+     "source_quote": "5X Points on Prepaid Hotels Booked on American Express Travel®."}
+  ],
+  "credits": [
+    {"name": "Hotel Credit", "amount_usd": 600, "note": "Up to $300 semi-annually on prepaid Fine Hotels + Resorts or The Hotel Collection (2-night minimum) bookings via Amex Travel"},
+    {"name": "Resy Credit", "amount_usd": 400, "note": "Up to $100 quarterly at qualifying U.S. Resy restaurants; enrollment required"},
+    {"name": "Digital Entertainment Credit", "amount_usd": 300, "note": "Up to $25 monthly at participating partners; enrollment required"},
+    {"name": "lululemon Credit", "amount_usd": 300, "note": "Up to $75 quarterly at U.S. lululemon stores and lululemon.com; enrollment required"},
+    {"name": "Equinox Credit", "amount_usd": 300, "note": "Up to $300 per calendar year for Equinox club membership or Equinox+; enrollment required"},
+    {"name": "Uber Cash", "amount_usd": 200, "note": "$15 monthly plus $20 bonus in December; U.S. rides and orders"},
+    {"name": "Airline Fee Credit", "amount_usd": 200, "note": "Incidental fees on one selected qualifying airline per calendar year"}
+  ],
+  "last_verified": null,
+  "notes": "DRAFT 2026-10-12 from https://www.americanexpress.com/us/credit-cards/card/platinum/ (issuer page, read directly). Needs human review. Annual fee $895 is for the Basic Card per page FAQ. Rate for hotels booked directly and everything else is 1X (base_rate). Not modeled: other credits (Uber One $120, CLEAR+ $219, Walmart+ $155, Oura $200, Global Entry/TSA), lounge access, Fine Hotels + Resorts perks. Credits are 'up to' amounts and many require enrollment or specific merchants; value to a given user is uncertain. Car rental earns base rate (no bonus stated)."
+}

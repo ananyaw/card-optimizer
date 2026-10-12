@@ -1,0 +1,18 @@
+{
+  "id": "capital_one_quicksilver",
+  "name": "Capital One Quicksilver Cash Rewards",
+  "issuer": "Capital One",
+  "aliases": [
+    "quicksilver",
+    "quicksilver cash",
+    "cap one quicksilver"
+  ],
+  "annual_fee": 0,
+  "currency": "cash",
+  "base_rate": 1.5,
+  "terms_url": "https://www.capitalone.com/credit-cards/quicksilver/",
+  "rules": [],
+  "credits": [],
+  "last_verified": null,
+  "notes": "DRAFT 2026-10-12 from https://www.capitalone.com/credit-cards/quicksilver/ (issuer page, fetched OK). Needs human review. Page states 'Earn unlimited 1.5% cash back on every purchase.' (base_rate). ANNUAL FEE NOT STATED on the fetched page; annual_fee set to 0 from general knowledge (not from the source), VERIFY. No bonus categories or portal rates stated on this page (Capital One Travel bonus, if any, not confirmed so not modeled)."
+}

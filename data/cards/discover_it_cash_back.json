@@ -1,0 +1,19 @@
+{
+  "id": "discover_it_cash_back",
+  "name": "Discover it Cash Back",
+  "issuer": "Discover (Capital One)",
+  "aliases": ["discover it", "discover it cash back", "discover"],
+  "annual_fee": 0,
+  "currency": "cash",
+  "base_rate": 1,
+  "terms_url": "https://www.discover.com/credit-cards/cash-back/it-card/",
+  "rules": [
+    {"category": "dining", "channel": "any", "rate": 5, "requires": "category is active this quarter (Oct-Dec 2026) and you activated it",
+     "note": "Q4 2026 5% categories are restaurants, entertainment, utilities; quarterly cap $1,500; categories rotate each quarter",
+     "source_url": "https://www.insideflyer.com/posts/q4-2026-rotating-5-cashback-categories-now-active/",
+     "source_quote": "Discover’s 5% applies to restaurants, entertainment, and utilities, also capped at $1,500."}
+  ],
+  "credits": [],
+  "last_verified": null,
+  "notes": "DRAFT 2026-10-12 from https://www.discover.com/credit-cards/cash-back/it-card/ (issuer page: 5% on rotating categories up to the quarterly maximum when you activate, 1% on all other purchases, no annual fee) and https://www.discover.com/credit-cards/cash-back/cashback-calendar.html (cap 'up to $1,500 in different category purchases each quarter'; calendar itself failed to load: 'rewards calendar is not working'). The Q4 2026 category list was NOT available from Discover; it comes from a secondary source (InsideFlyer, citing FrequentMiler, published 2026-09-15) and a search summary. Needs human review against the Discover calendar. cap_usd omitted because the $1,500 cap is quarterly, not annual, and the engine field is annual. Rotating categories change each quarter, so the dining rule is only valid Oct-Dec 2026. Not modeled: entertainment, utilities. Other quarters' categories (e.g. groceries, gas, Amazon, PayPal) unknown and not recorded. First-year Cashback Match (unlimited dollar-for-dollar match at end of year 1) not modeled."
+}

@@ -1,0 +1,61 @@
+{
+  "id": "chase_sapphire_reserve",
+  "name": "Chase Sapphire Reserve",
+  "issuer": "Chase",
+  "aliases": ["csr", "sapphire reserve", "chase reserve"],
+  "annual_fee": 795,
+  "currency": "chase_ur",
+  "base_rate": 1,
+  "terms_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+  "rules": [
+    {
+      "category": "flights", "channel": "portal", "rate": 8,
+      "note": "all purchases through Chase Travel, incl. The Edit",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "source_quote": "8x points on all purchases through Chase Travel, including The Edit"
+    },
+    {
+      "category": "hotels", "channel": "portal", "rate": 8,
+      "note": "all purchases through Chase Travel, incl. The Edit",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "source_quote": "8x points on all purchases through Chase Travel, including The Edit"
+    },
+    {
+      "category": "car_rental", "channel": "portal", "rate": 8,
+      "note": "all purchases through Chase Travel, incl. The Edit",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "source_quote": "8x points on all purchases through Chase Travel, including The Edit"
+    },
+    {
+      "category": "flights", "channel": "direct", "rate": 4,
+      "note": "flights booked direct",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "source_quote": "4x points on flights booked direct"
+    },
+    {
+      "category": "hotels", "channel": "direct", "rate": 4,
+      "note": "hotels booked direct",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "source_quote": "4x points on hotels booked direct"
+    },
+    {
+      "category": "dining", "channel": "any", "rate": 3,
+      "note": "dining worldwide",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve",
+      "source_quote": "3x points on dining worldwide"
+    }
+  ],
+  "credits": [
+    {"name": "Annual travel credit", "amount_usd": 300, "note": "Statement credits for travel each account anniversary year; qualifying purchases do not earn points"},
+    {"name": "The Edit hotel credit", "amount_usd": 500, "note": "Up to $250 per prepaid The Edit booking, $500 annually; two-night minimum"},
+    {"name": "Exclusive Tables dining credit", "amount_usd": 300, "note": "$150 Jan-Jun and $150 Jul-Dec at Sapphire Reserve Exclusive Tables restaurants on OpenTable"},
+    {"name": "StubHub/viagogo credit", "amount_usd": 300, "note": "$150 per half-year through 12/31/2027; activation required"},
+    {"name": "Apple TV and Apple Music", "amount_usd": 324, "note": "Complimentary subscriptions, min. one year, activate by 6/22/2027 (value as stated by Chase)"},
+    {"name": "DashPass membership", "amount_usd": 120, "note": "Complimentary DashPass; activation required"},
+    {"name": "Lyft ride credit", "amount_usd": 120, "note": "$10/month in-app credits through 9/30/2027, plus 5x on Lyft rides"},
+    {"name": "Peloton membership credit", "amount_usd": 120, "note": "$10/month through 12/31/2027; activation required; plus 10x on eligible equipment over $150"},
+    {"name": "Global Entry/TSA PreCheck/NEXUS", "amount_usd": 120, "note": "One statement credit every four years"}
+  ],
+  "last_verified": null,
+  "notes": "UPDATED 2026-10-12 from the Chase issuer page https://creditcards.chase.com/rewards-credit-cards/sapphire/reserve (supplied by the user; an earlier draft used secondary sources because a wrong URL path returned empty). Rates, $795 fee and the listed credits were read from the issuer page and still need human review. Credit values are face value, not usability-adjusted. Dropped from the earlier draft because the issuer page excerpt did not confirm them: DoorDash $300 promos. Not modeled: Lyft 5x, Peloton 10x, Points Boost (points worth up to 2x on select Chase Travel bookings), 1x on other purchases beyond base rate, lounge access, $500 Southwest credit."
+}

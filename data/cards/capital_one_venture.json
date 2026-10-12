@@ -1,0 +1,35 @@
+{
+  "id": "capital_one_venture",
+  "name": "Capital One Venture Rewards",
+  "issuer": "Capital One",
+  "aliases": [
+    "venture",
+    "venture rewards",
+    "cap one venture"
+  ],
+  "annual_fee": 95,
+  "currency": "capone_miles",
+  "base_rate": 2,
+  "terms_url": "https://www.capitalone.com/credit-cards/venture/",
+  "rules": [
+    {
+      "category": "hotels",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Hotels and vacation rentals booked through Capital One Travel",
+      "source_url": "https://www.capitalone.com/credit-cards/venture/",
+      "source_quote": "Earn 5X miles on hotels, vacation rentals, and rental cars booked through Capital One Travel."
+    },
+    {
+      "category": "car_rental",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Rental cars booked through Capital One Travel",
+      "source_url": "https://www.capitalone.com/credit-cards/venture/",
+      "source_quote": "Earn 5X miles on hotels, vacation rentals, and rental cars booked through Capital One Travel."
+    }
+  ],
+  "credits": [],
+  "last_verified": null,
+  "notes": "DRAFT 2026-10-12 from https://www.capitalone.com/credit-cards/venture/ (issuer page, fetched OK). Needs human review. Base 2X: 'Get unlimited 2X miles per dollar on every purchase'. Flights via Capital One Travel: page states no bonus rate, so not modeled (falls to 2X). Not modeled: 5X Capital One Entertainment tickets. Credits skipped: $300 Capital One Travel stays credit is one-time first-year; up to $120 Global Entry/TSA credit is once per 4 years; $50 Lifestyle Collection experience credit is per stay."
+}

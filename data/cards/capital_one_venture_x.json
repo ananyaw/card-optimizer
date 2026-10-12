@@ -1,0 +1,44 @@
+{
+  "id": "capital_one_venture_x",
+  "name": "Capital One Venture X",
+  "issuer": "Capital One",
+  "aliases": [
+    "venture x",
+    "vx",
+    "capital one venture x",
+    "capital one"
+  ],
+  "annual_fee": 395,
+  "currency": "capone_miles",
+  "base_rate": 2,
+  "terms_url": "https://www.capitalone.com/credit-cards/venture-x/",
+  "rules": [
+    {
+      "category": "hotels",
+      "channel": "portal",
+      "rate": 10,
+      "note": "Capital One Travel",
+      "source_url": "https://www.capitalone.com/credit-cards/venture-x/",
+      "source_quote": "Miles on hotels & rental cars booked through Capital One Travel"
+    },
+    {
+      "category": "car_rental",
+      "channel": "portal",
+      "rate": 10,
+      "note": "Capital One Travel",
+      "source_url": "https://www.capitalone.com/credit-cards/venture-x/",
+      "source_quote": "Miles on hotels & rental cars booked through Capital One Travel"
+    },
+    {
+      "category": "flights",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Capital One Travel",
+      "source_url": "https://www.capitalone.com/credit-cards/venture-x/",
+      "source_quote": "Miles on flights and vacation rentals booked through Capital One Travel"
+    }
+  ],
+  "credits": [],
+  "last_verified": null,
+  "notes": "AUDITED DRAFT 2026-10-12 from https://www.capitalone.com/credit-cards/venture-x/ (issuer page). Needs human review. Fee $395, 10X/5X/2X confirmed (the 10X/5X/2X numerals are page headings; the quote text is the adjacent caption). UNRESOLVED: the previous file listed a $300 annual travel credit and the page fetched did not state it (nor the 10,000 anniversary miles), so the credit was removed; verify in rewards terms. Not modeled: 5X vacation rentals and Capital One Entertainment (5X), Premier/Lifestyle Collection hotel credits, lounge access."
+}

@@ -1,0 +1,59 @@
+{
+  "id": "chase_freedom_flex",
+  "name": "Chase Freedom Flex",
+  "issuer": "Chase",
+  "aliases": [
+    "freedom flex",
+    "cff",
+    "chase freedom flex"
+  ],
+  "annual_fee": 0,
+  "currency": "chase_ur",
+  "base_rate": 1,
+  "terms_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+  "rules": [
+    {
+      "category": "dining",
+      "channel": "any",
+      "rate": 3,
+      "note": "including takeout and eligible delivery",
+      "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+      "source_quote": "3% cash back on dining at restaurants"
+    },
+    {
+      "category": "drugstore",
+      "channel": "any",
+      "rate": 3,
+      "note": "drugstore purchases",
+      "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+      "source_quote": "3% cash back on drugstore purchases"
+    },
+    {
+      "category": "flights",
+      "channel": "portal",
+      "rate": 5,
+      "note": "travel purchased through Chase Travel",
+      "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+      "source_quote": "5% cash back on travel purchased through Chase Travel"
+    },
+    {
+      "category": "hotels",
+      "channel": "portal",
+      "rate": 5,
+      "note": "travel purchased through Chase Travel",
+      "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+      "source_quote": "5% cash back on travel purchased through Chase Travel"
+    },
+    {
+      "category": "car_rental",
+      "channel": "portal",
+      "rate": 5,
+      "note": "travel purchased through Chase Travel",
+      "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/flex",
+      "source_quote": "5% cash back on travel purchased through Chase Travel"
+    }
+  ],
+  "credits": [],
+  "last_verified": null,
+  "notes": "AUDITED DRAFT 2026-10-12 from https://creditcards.chase.com/cash-back-credit-cards/freedom/flex (issuer page). Needs human review. Fee $0, 1% base, 3% dining/drugstore, 5% Chase Travel confirmed. Page says 'cash back'; kept currency chase_ur as in existing file (cash back is Ultimate Rewards points; pooling value depends on engine valuations; verify). Not modeled: rotating categories (5% on up to $1,500/quarter, activation required; Jul-Sep 2026 was gas, transit, EV charging, live entertainment, United Way), Lyft 2% through 9/30/2027."
+}

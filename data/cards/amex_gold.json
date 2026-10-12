@@ -1,0 +1,82 @@
+{
+  "id": "amex_gold",
+  "name": "American Express Gold Card",
+  "issuer": "American Express",
+  "aliases": [
+    "amex gold",
+    "gold card",
+    "amex gold card"
+  ],
+  "annual_fee": 325,
+  "currency": "amex_mr",
+  "base_rate": 1,
+  "terms_url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+  "rules": [
+    {
+      "category": "dining",
+      "channel": "any",
+      "rate": 4,
+      "cap_usd": 50000,
+      "note": "restaurants worldwide; 1x after cap",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "source_quote": "4X Membership Rewards® points per dollar spent on purchases at restaurants worldwide, on up to $50,000 in purchases per calendar year"
+    },
+    {
+      "category": "groceries",
+      "channel": "any",
+      "rate": 4,
+      "cap_usd": 25000,
+      "note": "US supermarkets; 1x after cap",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "source_quote": "4X Membership Rewards® points per dollar spent at US supermarkets, on up to $25,000 in purchases per calendar year"
+    },
+    {
+      "category": "flights",
+      "channel": "any",
+      "rate": 3,
+      "note": "direct with airlines or via AmexTravel.com / Amex Travel app",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "source_quote": "3X Membership Rewards® points per dollar spent on flights booked through AmexTravel.com or the Amex Travel App™ or purchased directly from airlines"
+    },
+    {
+      "category": "hotels",
+      "channel": "portal",
+      "rate": 5,
+      "note": "prepaid hotels via AmexTravel.com / Amex Travel app",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "source_quote": "5X Membership Rewards® points per dollar spent on prepaid hotels booked through AmexTravel.com or the Amex Travel App™"
+    },
+    {
+      "category": "car_rental",
+      "channel": "portal",
+      "rate": 2,
+      "note": "prepaid car rentals via AmexTravel.com / Amex Travel app",
+      "source_url": "https://www.americanexpress.com/us/credit-cards/card/gold-card/",
+      "source_quote": "2X Membership Rewards® points per dollar spent on prepaid car rentals booked through AmexTravel.com or the Amex Travel App™"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Dining credit",
+      "amount_usd": 120,
+      "note": "$10/month at Grubhub/Seamless, Buffalo Wild Wings, Five Guys, The Cheesecake Factory, Wonder; enrollment required"
+    },
+    {
+      "name": "Uber Cash",
+      "amount_usd": 120,
+      "note": "$10/month in US; add card to Uber account"
+    },
+    {
+      "name": "Resy credit",
+      "amount_usd": 100,
+      "note": "Up to $50 Jan-Jun and $50 Jul-Dec at US Resy restaurants; enrollment required"
+    },
+    {
+      "name": "Dunkin' credit",
+      "amount_usd": 84,
+      "note": "Up to $7/month at US Dunkin'; enrollment required"
+    }
+  ],
+  "last_verified": null,
+  "notes": "AUDITED DRAFT 2026-10-12 from https://www.americanexpress.com/us/credit-cards/card/gold-card/ (issuer page, read in full). Needs human review. Fee $325 confirmed. Not modeled: cruises booked via AmexTravel.com (2x with car rentals), The Hotel Collection $100 credit (2-night minimum), 1x after caps (modeled via base_rate only implicitly), Hertz status. Credit face values only."
+}

@@ -1,0 +1,19 @@
+{
+  "id": "apple_card",
+  "name": "Apple Card",
+  "issuer": "Goldman Sachs Bank USA",
+  "aliases": ["apple card", "apple", "apple pay card"],
+  "annual_fee": 0,
+  "currency": "cash",
+  "base_rate": 1,
+  "terms_url": "https://www.apple.com/apple-card/",
+  "rules": [
+    {"category": "general", "channel": "any", "rate": 2, "requires": "paying with Apple Pay",
+     "note": "2% Daily Cash on purchases using Apple Card with Apple Pay; physical card or card number earns 1% (base_rate)",
+     "source_url": "https://www.apple.com/apple-card/",
+     "source_quote": "Get 2% Daily Cash back when you use Apple Card with Apple Pay."}
+  ],
+  "credits": [],
+  "last_verified": null,
+  "notes": "DRAFT 2026-10-12 from https://www.apple.com/apple-card/ (Apple page, read directly). Needs human review. ISSUER UNRESOLVED: the fetched Apple page still names Goldman Sachs as issuing bank ('Apple Card is the first consumer credit card Goldman Sachs has issued') and Mastercard as network, but issuer arrangements may have changed; verify. Annual fee 0 based on page description 'no fees' (meta). Physical titanium card earns 1% ('you'll get 1% Daily Cash back on every purchase'), which equals base_rate. Not modeled: 3% Daily Cash at Apple and at select merchants when paying with Apple Pay (merchant-specific, e.g. Nike, Uber/Uber Eats, Walgreens/Duane Reade, Exxon/Mobil, ChargePoint, Hertz, Booking.com, Ace Hardware, with exclusions), Apple financing 3%, Booking.com travel credits. Exxon/Mobil and Walgreens could map to gas/drugstore but only at those named merchants, so omitted."
+}

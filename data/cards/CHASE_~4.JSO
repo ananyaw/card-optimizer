@@ -1,0 +1,89 @@
+{
+  "id": "chase_sapphire_preferred",
+  "name": "Chase Sapphire Preferred",
+  "issuer": "Chase",
+  "aliases": [
+    "sapphire preferred",
+    "csp",
+    "chase sapphire"
+  ],
+  "annual_fee": 95,
+  "currency": "chase_ur",
+  "base_rate": 1,
+  "terms_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+  "rules": [
+    {
+      "category": "dining",
+      "channel": "any",
+      "rate": 3,
+      "note": "Restaurants incl. takeout and eligible delivery",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "source_quote": "dining at restaurants including takeout and eligible delivery services"
+    },
+    {
+      "category": "gas",
+      "channel": "any",
+      "rate": 3,
+      "note": "Gas stations and EV charging",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "source_quote": "gas stations; electric vehicle charging"
+    },
+    {
+      "category": "flights",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Through Chase Travel; excludes FROSCH / Valerie Wilson Travel by Chase Travel (those earn 2x)",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "source_quote": "You’ll earn 5 points for each $1 spent on purchases made using your card through Chase Travel."
+    },
+    {
+      "category": "hotels",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Through Chase Travel; excludes FROSCH / Valerie Wilson Travel by Chase Travel (those earn 2x)",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "source_quote": "You’ll earn 5 points for each $1 spent on purchases made using your card through Chase Travel."
+    },
+    {
+      "category": "car_rental",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Through Chase Travel; excludes FROSCH / Valerie Wilson Travel by Chase Travel (those earn 2x)",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "source_quote": "You’ll earn 5 points for each $1 spent on purchases made using your card through Chase Travel."
+    },
+    {
+      "category": "flights",
+      "channel": "direct",
+      "rate": 2,
+      "note": "Travel category purchases not through Chase Travel; exact merchant types in the travel category not itemized on the page",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "source_quote": "You’ll earn 2 points for each $1 spent on purchases made in the travel category"
+    },
+    {
+      "category": "hotels",
+      "channel": "direct",
+      "rate": 2,
+      "note": "Travel category purchases not through Chase Travel; exact merchant types in the travel category not itemized on the page",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "source_quote": "You’ll earn 2 points for each $1 spent on purchases made in the travel category"
+    },
+    {
+      "category": "car_rental",
+      "channel": "direct",
+      "rate": 2,
+      "note": "Travel category purchases not through Chase Travel; exact merchant types in the travel category not itemized on the page",
+      "source_url": "https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred",
+      "source_quote": "You’ll earn 2 points for each $1 spent on purchases made in the travel category"
+    }
+  ],
+  "credits": [
+    {
+      "name": "Chase Travel hotel credit",
+      "amount_usd": 100,
+      "note": "Statement credit per account anniversary year for hotel stays purchased through Chase Travel; first $100 of those purchases does not earn points"
+    }
+  ],
+  "last_verified": null,
+  "notes": "DRAFT 2026-10-12 from https://creditcards.chase.com/rewards-credit-cards/sapphire/preferred (issuer page and its rewards terms text). Needs human review. Direct 2x applies to the generic 'travel' category; mapping to flights/hotels/car_rental is an assumption about what the issuer codes as travel. Not modeled: 3x on top streaming services, 3x on online grocery (excludes Target, Walmart, wholesale clubs; does not cover in-store groceries), 3x vacation homes at top brands, $10 monthly DoorDash promo, other promos. Welcome bonus ignored."
+}

@@ -1,0 +1,51 @@
+{
+  "id": "capital_one_savor",
+  "name": "Capital One Savor Cash Rewards",
+  "issuer": "Capital One",
+  "aliases": [
+    "savor",
+    "savor cash",
+    "cap one savor"
+  ],
+  "annual_fee": 0,
+  "currency": "cash",
+  "base_rate": 1,
+  "terms_url": "https://www.capitalone.com/credit-cards/savor/",
+  "rules": [
+    {
+      "category": "dining",
+      "channel": "any",
+      "rate": 3,
+      "note": "Restaurants, cafes, bars, lounges, fast-food chains, bakeries",
+      "source_url": "https://www.capitalone.com/credit-cards/savor/",
+      "source_quote": "Earn unlimited 3% cash back at grocery stores, on dining, entertainment and popular streaming services."
+    },
+    {
+      "category": "groceries",
+      "channel": "any",
+      "rate": 3,
+      "note": "Grocery stores; excludes superstores like Walmart and Target",
+      "source_url": "https://www.capitalone.com/credit-cards/savor/",
+      "source_quote": "Earn unlimited 3% cash back at grocery stores (excluding superstores like Walmart\u00ae and Target\u00ae), on dining, entertainment and popular streaming services."
+    },
+    {
+      "category": "hotels",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Hotels and vacation rentals booked through Capital One Travel",
+      "source_url": "https://www.capitalone.com/credit-cards/savor/",
+      "source_quote": "Earn unlimited 5% cash back on hotels, vacation rentals and rental cars booked through Capital One Travel."
+    },
+    {
+      "category": "car_rental",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Rental cars booked through Capital One Travel",
+      "source_url": "https://www.capitalone.com/credit-cards/savor/",
+      "source_quote": "Earn unlimited 5% cash back on hotels, vacation rentals and rental cars booked through Capital One Travel."
+    }
+  ],
+  "credits": [],
+  "last_verified": null,
+  "notes": "DRAFT 2026-10-12 from https://www.capitalone.com/credit-cards/savor/ (issuer page, fetched OK). Needs human review. Base: 'Earn unlimited 1% cash back on all other purchases'. Not modeled: entertainment, popular streaming services. Annual fee $0 per page ('$0 annual fee')."
+}

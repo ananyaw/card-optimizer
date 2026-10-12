@@ -1,0 +1,35 @@
+{
+  "id": "citi_double_cash",
+  "name": "Citi Double Cash",
+  "issuer": "Citi",
+  "aliases": [
+    "double cash",
+    "citi double cash",
+    "citi"
+  ],
+  "annual_fee": 0,
+  "currency": "cash",
+  "base_rate": 2,
+  "terms_url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+  "rules": [
+    {
+      "category": "hotels",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Citi Travel portal; 3% extra + 1% buy + 1% pay",
+      "source_url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "source_quote": "an additional 3% cash back on hotels, car rentals, and attractions booked through the Citi Travel® portal"
+    },
+    {
+      "category": "car_rental",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Citi Travel portal; 3% extra + 1% buy + 1% pay",
+      "source_url": "https://www.citi.com/credit-cards/citi-double-cash-credit-card",
+      "source_quote": "an additional 3% cash back on hotels, car rentals, and attractions booked through the Citi Travel® portal"
+    }
+  ],
+  "credits": [],
+  "last_verified": null,
+  "notes": "AUDITED DRAFT 2026-10-12 from https://www.citi.com/credit-cards/citi-double-cash-credit-card (issuer page). Needs human review. Flat 2% (1% buy + 1% as you pay) and $0 fee confirmed. NEW: 5% total on Citi Travel portal hotels/car rentals (attractions not modeled). Points are ThankYou Points redeemable 1c each for cash, modeled as cash; the 1% payment half requires paying at least the minimum on time. Not modeled: attractions."
+}

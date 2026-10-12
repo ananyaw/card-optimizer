@@ -1,0 +1,18 @@
+{
+  "id": "wells_fargo_active_cash",
+  "name": "Wells Fargo Active Cash Card",
+  "issuer": "Wells Fargo",
+  "aliases": [
+    "active cash",
+    "wells fargo active cash",
+    "wf active cash"
+  ],
+  "annual_fee": 0,
+  "currency": "cash",
+  "base_rate": 2,
+  "terms_url": "https://creditcards.wellsfargo.com/active-cash-credit-card/",
+  "rules": [],
+  "credits": [],
+  "last_verified": null,
+  "notes": "DRAFT 2026-10-12 from https://creditcards.wellsfargo.com/active-cash-credit-card/ (issuer page, fetched OK). Needs human review. Flat 2%: 'unlimited 2% cash rewards on purchases'; $0 annual fee linked on page. Rewards are cash rewards (Wells Fargo Rewards). No bonus categories. 3% foreign transaction fee."
+}

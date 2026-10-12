@@ -1,0 +1,25 @@
+{
+  "id": "amex_blue_cash_preferred",
+  "name": "Blue Cash Preferred Card from American Express",
+  "issuer": "American Express",
+  "aliases": ["blue cash preferred", "bcp", "amex bcp", "amex blue cash"],
+  "annual_fee": 95,
+  "currency": "cash",
+  "base_rate": 1,
+  "terms_url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
+  "rules": [
+    {"category": "groceries", "channel": "any", "rate": 6, "cap_usd": 6000,
+     "note": "U.S. supermarkets; then 1% after the cap",
+     "source_url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
+     "source_quote": "Card Members can earn 6% cash back on eligible purchases at U.S. supermarkets, on up to $6,000 per year in purchases (then 1%)."},
+    {"category": "gas", "channel": "any", "rate": 3,
+     "note": "U.S. gas stations",
+     "source_url": "https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/",
+     "source_quote": "Card Members can earn 3% cash back on eligible purchases at U.S. gas stations."}
+  ],
+  "credits": [
+    {"name": "Disney Streaming Credit", "amount_usd": 120, "note": "Up to $10 monthly statement credit for subscriptions at DisneyPlus.com, Hulu.com or Stream.ESPN.com; enrollment required"}
+  ],
+  "last_verified": null,
+  "notes": "DRAFT 2026-10-12 from https://www.americanexpress.com/us/credit-cards/card/blue-cash-preferred/ (issuer page, read directly). Needs human review. Annual fee is $0 intro for first year, then $95 (modeled as 95). Not modeled: 6% on select U.S. streaming subscriptions, 3% on transit (taxis, rideshare, parking, tolls, trains, buses). Cash back is received as Reward Dollars. Foreign transaction fee 2.7%."
+}

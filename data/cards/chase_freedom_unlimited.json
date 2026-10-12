@@ -1,0 +1,58 @@
+{
+  "id": "chase_freedom_unlimited",
+  "name": "Chase Freedom Unlimited",
+  "issuer": "Chase",
+  "aliases": [
+    "freedom unlimited",
+    "cfu",
+    "chase fu"
+  ],
+  "annual_fee": 0,
+  "currency": "cash",
+  "base_rate": 1.5,
+  "terms_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+  "rules": [
+    {
+      "category": "dining",
+      "channel": "any",
+      "rate": 3,
+      "note": "Restaurants incl. takeout and eligible delivery",
+      "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+      "source_quote": "Earn 3% on dining at restaurants, including takeout and eligible delivery services."
+    },
+    {
+      "category": "drugstore",
+      "channel": "any",
+      "rate": 3,
+      "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+      "source_quote": "Earn 3% on drugstore purchases."
+    },
+    {
+      "category": "flights",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Purchased through Chase Travel; page says 'travel' generally, not split by flights/hotels/car rental",
+      "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+      "source_quote": "Earn 5% on travel purchased through Chase Travel"
+    },
+    {
+      "category": "hotels",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Purchased through Chase Travel; page says 'travel' generally, not split by flights/hotels/car rental",
+      "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+      "source_quote": "Earn 5% on travel purchased through Chase Travel"
+    },
+    {
+      "category": "car_rental",
+      "channel": "portal",
+      "rate": 5,
+      "note": "Purchased through Chase Travel; page says 'travel' generally, not split by flights/hotels/car rental",
+      "source_url": "https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited",
+      "source_quote": "Earn 5% on travel purchased through Chase Travel"
+    }
+  ],
+  "credits": [],
+  "last_verified": null,
+  "notes": "DRAFT 2026-10-12 from https://creditcards.chase.com/cash-back-credit-cards/freedom/unlimited (issuer page, incl. rewards terms text on the page). Needs human review. Page states $0 annual fee and 1.5% on all other purchases. Chase Travel 5% mapped to flights/hotels/car_rental portal because the page says only 'travel purchased through Chase Travel'; confirm which travel types qualify. Not modeled: Lyft 2% (0.5% additional), DoorDash non-restaurant $10 quarterly promo. Gas, groceries not listed as bonus on this page (earn base 1.5%)."
+}
