@@ -1,0 +1,12 @@
+[
+  {"id": "amazon", "name": "Amazon", "domains": ["amazon.com"], "aliases": ["amazon prime"]},
+  {"id": "whole_foods", "name": "Whole Foods Market", "domains": ["wholefoodsmarket.com"], "aliases": ["whole foods"]},
+  {"id": "costco", "name": "Costco", "domains": ["costco.com"], "aliases": ["costco wholesale"]},
+  {"id": "apple", "name": "Apple", "domains": ["apple.com"], "aliases": ["apple store"]},
+  {"id": "target", "name": "Target", "domains": ["target.com"], "aliases": []},
+  {"id": "walmart", "name": "Walmart", "domains": ["walmart.com"], "aliases": []},
+  {"id": "delta", "name": "Delta Air Lines", "domains": ["delta.com"], "aliases": ["delta airlines"]},
+  {"id": "united", "name": "United Airlines", "domains": ["united.com"], "aliases": ["united air lines"]},
+  {"id": "marriott", "name": "Marriott", "domains": ["marriott.com"], "aliases": ["marriott bonvoy"]},
+  {"id": "hilton", "name": "Hilton", "domains": ["hilton.com"], "aliases": ["hilton hotels"]}
+]
